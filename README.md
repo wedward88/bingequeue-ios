@@ -1,6 +1,6 @@
 # BingeQueue iOS
 
-Native SwiftUI client for [BingeQueue](https://bingequeue.com) (streaming subscriptions + watch list).
+Native SwiftUI client for [BingeQueue](https://www.bingequeue.com) (streaming subscriptions + watch list).
 
 ## Requirements
 
@@ -39,7 +39,7 @@ Bundle ID is `com.bingequeue.com`.
 | Build | Base URL |
 |-------|----------|
 | Debug | `http://localhost:3000` |
-| Release | `https://bingequeue.com` |
+| Release | `https://api.bingequeue.com` |
 
 Run the web app (`npm run dev` in `~/dev/bingequeue`) before signing in from the simulator.
 
