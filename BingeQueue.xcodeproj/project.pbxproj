@@ -1,0 +1,666 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B4B2DE7F775242D906F1B64 /* BingeQueueWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22EDAAC48F601DD462E02FB /* BingeQueueWidget.swift */; };
+		12A682F339859780E061D115 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71CC03C22BAC937D20243D /* SubscriptionsView.swift */; };
+		165A1B2CDA0A4E31EB78E274 /* WatchListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFD6CE95710FB1427CC1D2 /* WatchListViews.swift */; };
+		1C532C45EAAB46CAA30E499F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9D755D95C324A396D28201 /* Assets.xcassets */; };
+		23D65B528A604909F9E45DC0 /* LocalLibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAB9683BAFF1E114DF0A150 /* LocalLibraryStore.swift */; };
+		2870AAE159D8B4FD37EACA4C /* WatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBF8C7F3D3ACF7FB27F061 /* WatchViewModel.swift */; };
+		3811D8CC3D6AF2737F76D719 /* WidgetSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171D41EFE01F53F0D85DE349 /* WidgetSync.swift */; };
+		3944AA3029B16E8D7CD4285C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8080584338033D7D05EC3748 /* APIClient.swift */; };
+		3E747A182512C56FC20D9AFD /* WidgetDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF45C863DCABFF6E26D3F0C /* WidgetDataStore.swift */; };
+		4483910A2E8964999EA0A21A /* WidgetDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF45C863DCABFF6E26D3F0C /* WidgetDataStore.swift */; };
+		527F9B2B7CDBA6E1B3926C4F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AC1911954EBC577D355820 /* RootView.swift */; };
+		561A2C8EF2865321558AD3B9 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1500084B1A77F0870912E4C /* KeychainStore.swift */; };
+		56FE75F0737D2F57048C6D6C /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7BA99E9B8AEAD2C181787A /* WidgetSnapshot.swift */; };
+		58E3849C41732C859AA2FD30 /* BrandMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B063C65E18CEC41D6FB1D82 /* BrandMark.swift */; };
+		67A1680AC7A0567DAE72E857 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E7F00555ADBB5C8010204C /* Brand.swift */; };
+		6A562C5D53D2605DAE65C774 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49298A42120C7A6568AA97A /* SignInView.swift */; };
+		6C90F7C147D0F6EED3759885 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = CC80A4A5B41E99C6D9AAB0A4 /* GoogleSignIn */; };
+		6D1E8336B171BD8B37BDDA31 /* BrandNavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046D1B4EBE127CD6FB0D79A /* BrandNavTitle.swift */; };
+		6E9D76C028F7EAF783A1EB8C /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E9524142A9DE27C9B910A /* WatchView.swift */; };
+		71FA4A9478D77A84D6459890 /* AddEditSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C9225F2D2EA1F9FBDC0259 /* AddEditSubscription.swift */; };
+		7D31E2538D88CD87C5CA96E2 /* BingeQueueWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7689DD0BDA50B3AE69B3F6B9 /* BingeQueueWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9A4B53BF1E0F2A1B48F5679F /* BingeQueueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456E0B6117AB1F23C60F099C /* BingeQueueApp.swift */; };
+		9DF17F27170419850489926D /* SubscriptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86B8CCDF740F94CF2B67BCA /* SubscriptionsViewModel.swift */; };
+		AE2B0CEE312B340487EA8BAE /* AuthSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CB9CAD1521587E973A714 /* AuthSession.swift */; };
+		C6A674F299837A56308A31AC /* tmdb-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 2E557E23EA22710CCEE8FA4E /* tmdb-logo.svg */; };
+		C8EE18B2114680858825BABC /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E39BD73594D20300F413D74 /* GoogleSignInSwift */; };
+		D23A35FA453F0C84AE011291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5F532DDB2F22A9B6D26ECD7 /* Assets.xcassets */; };
+		E0205DDA16926A89C2E86C52 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F0FC707E2673D99677DDB2 /* AppConfig.swift */; };
+		EE0C5E738D4C68714714CE48 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851F2CA6617866571A87E56E /* Models.swift */; };
+		FA14957B564A065CA4DECA38 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7BA99E9B8AEAD2C181787A /* WidgetSnapshot.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		879074A26894233594D52EE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 555F776470C6C9475872090A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2822D08C163716A00C9B1E48;
+			remoteInfo = BingeQueueWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		52F84383CDA8D9A96B7637A0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7D31E2538D88CD87C5CA96E2 /* BingeQueueWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		12AC1911954EBC577D355820 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		1490D9C3B0F1810434FD2C83 /* BingeQueue.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BingeQueue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		171D41EFE01F53F0D85DE349 /* WidgetSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSync.swift; sourceTree = "<group>"; };
+		17E7F00555ADBB5C8010204C /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		1EF45C863DCABFF6E26D3F0C /* WidgetDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataStore.swift; sourceTree = "<group>"; };
+		2E557E23EA22710CCEE8FA4E /* tmdb-logo.svg */ = {isa = PBXFileReference; path = "tmdb-logo.svg"; sourceTree = "<group>"; };
+		3B063C65E18CEC41D6FB1D82 /* BrandMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandMark.swift; sourceTree = "<group>"; };
+		3B7BA99E9B8AEAD2C181787A /* WidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
+		456E0B6117AB1F23C60F099C /* BingeQueueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingeQueueApp.swift; sourceTree = "<group>"; };
+		7689DD0BDA50B3AE69B3F6B9 /* BingeQueueWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = BingeQueueWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8080584338033D7D05EC3748 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		851F2CA6617866571A87E56E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9AAB9683BAFF1E114DF0A150 /* LocalLibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLibraryStore.swift; sourceTree = "<group>"; };
+		9EFFD6CE95710FB1427CC1D2 /* WatchListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViews.swift; sourceTree = "<group>"; };
+		A046D1B4EBE127CD6FB0D79A /* BrandNavTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandNavTitle.swift; sourceTree = "<group>"; };
+		A0DBF8C7F3D3ACF7FB27F061 /* WatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViewModel.swift; sourceTree = "<group>"; };
+		A1500084B1A77F0870912E4C /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		A22EDAAC48F601DD462E02FB /* BingeQueueWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingeQueueWidget.swift; sourceTree = "<group>"; };
+		A49298A42120C7A6568AA97A /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		A7F0FC707E2673D99677DDB2 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		C53E9524142A9DE27C9B910A /* WatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
+		D2C9225F2D2EA1F9FBDC0259 /* AddEditSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditSubscription.swift; sourceTree = "<group>"; };
+		D5F532DDB2F22A9B6D26ECD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E86B8CCDF740F94CF2B67BCA /* SubscriptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewModel.swift; sourceTree = "<group>"; };
+		EB9D755D95C324A396D28201 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F56CB9CAD1521587E973A714 /* AuthSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSession.swift; sourceTree = "<group>"; };
+		FB71CC03C22BAC937D20243D /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FDD3934FDA03C50BD57F579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C90F7C147D0F6EED3759885 /* GoogleSignIn in Frameworks */,
+				C8EE18B2114680858825BABC /* GoogleSignInSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		058A7EEB5AAD7C4C784C7E61 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				4EEE43CD3DAA0132BDCB9C35 /* Auth */,
+				81B2708D149371459A0E717D /* Subscriptions */,
+				206723D4A3E1C57522260636 /* Watch */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		12856B7A37EF1ADB7AE2EB7E = {
+			isa = PBXGroup;
+			children = (
+				71DEBD6BC87E36E4651D67BF /* BingeQueue */,
+				FE2E907964F2223060493C0C /* BingeQueueWidget */,
+				A1995E316C85C2199BC3BEDB /* Shared */,
+				AD7C7D542BF5B96CA2151130 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1530270D0639FEB5368D364F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A7F0FC707E2673D99677DDB2 /* AppConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		1FF659C834098B2AB1DCE3CA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				456E0B6117AB1F23C60F099C /* BingeQueueApp.swift */,
+				12AC1911954EBC577D355820 /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		206723D4A3E1C57522260636 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				9EFFD6CE95710FB1427CC1D2 /* WatchListViews.swift */,
+				C53E9524142A9DE27C9B910A /* WatchView.swift */,
+				A0DBF8C7F3D3ACF7FB27F061 /* WatchViewModel.swift */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		4EEE43CD3DAA0132BDCB9C35 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F56CB9CAD1521587E973A714 /* AuthSession.swift */,
+				A49298A42120C7A6568AA97A /* SignInView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		57643E6F40A2BD3960055DFA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8080584338033D7D05EC3748 /* APIClient.swift */,
+				A1500084B1A77F0870912E4C /* KeychainStore.swift */,
+				9AAB9683BAFF1E114DF0A150 /* LocalLibraryStore.swift */,
+				171D41EFE01F53F0D85DE349 /* WidgetSync.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		71DEBD6BC87E36E4651D67BF /* BingeQueue */ = {
+			isa = PBXGroup;
+			children = (
+				D5F532DDB2F22A9B6D26ECD7 /* Assets.xcassets */,
+				1FF659C834098B2AB1DCE3CA /* App */,
+				1530270D0639FEB5368D364F /* Config */,
+				DB0CCB6693E5CAF1E115C03D /* Design */,
+				058A7EEB5AAD7C4C784C7E61 /* Features */,
+				7B995C907B048B90EE3B1F87 /* Models */,
+				57643E6F40A2BD3960055DFA /* Networking */,
+				A5FF91F8D11A4C2F8DB82CD7 /* Resources */,
+			);
+			path = BingeQueue;
+			sourceTree = "<group>";
+		};
+		7B995C907B048B90EE3B1F87 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				851F2CA6617866571A87E56E /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		81B2708D149371459A0E717D /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				D2C9225F2D2EA1F9FBDC0259 /* AddEditSubscription.swift */,
+				FB71CC03C22BAC937D20243D /* SubscriptionsView.swift */,
+				E86B8CCDF740F94CF2B67BCA /* SubscriptionsViewModel.swift */,
+			);
+			path = Subscriptions;
+			sourceTree = "<group>";
+		};
+		A1995E316C85C2199BC3BEDB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1EF45C863DCABFF6E26D3F0C /* WidgetDataStore.swift */,
+				3B7BA99E9B8AEAD2C181787A /* WidgetSnapshot.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A5FF91F8D11A4C2F8DB82CD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2E557E23EA22710CCEE8FA4E /* tmdb-logo.svg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AD7C7D542BF5B96CA2151130 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1490D9C3B0F1810434FD2C83 /* BingeQueue.app */,
+				7689DD0BDA50B3AE69B3F6B9 /* BingeQueueWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB0CCB6693E5CAF1E115C03D /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				17E7F00555ADBB5C8010204C /* Brand.swift */,
+				3B063C65E18CEC41D6FB1D82 /* BrandMark.swift */,
+				A046D1B4EBE127CD6FB0D79A /* BrandNavTitle.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		FE2E907964F2223060493C0C /* BingeQueueWidget */ = {
+			isa = PBXGroup;
+			children = (
+				EB9D755D95C324A396D28201 /* Assets.xcassets */,
+				A22EDAAC48F601DD462E02FB /* BingeQueueWidget.swift */,
+			);
+			path = BingeQueueWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2822D08C163716A00C9B1E48 /* BingeQueueWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E40629FA3241C62E9533063B /* Build configuration list for PBXNativeTarget "BingeQueueWidget" */;
+			buildPhases = (
+				9904EA86650C459272986258 /* Sources */,
+				DF53368ED75542F7F9F8C4CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BingeQueueWidget;
+			packageProductDependencies = (
+			);
+			productName = BingeQueueWidget;
+			productReference = 7689DD0BDA50B3AE69B3F6B9 /* BingeQueueWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5C87DFBF10DC99B0CB037F3A /* BingeQueue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21FFF2CD8D28704A9EFF5018 /* Build configuration list for PBXNativeTarget "BingeQueue" */;
+			buildPhases = (
+				D8E2D7F6A16F54E925F1DF3F /* Sources */,
+				CC4E2F7E684532F168DDCE19 /* Resources */,
+				7FDD3934FDA03C50BD57F579 /* Frameworks */,
+				52F84383CDA8D9A96B7637A0 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3421AA3722EBC1D7A08E1524 /* PBXTargetDependency */,
+			);
+			name = BingeQueue;
+			packageProductDependencies = (
+				CC80A4A5B41E99C6D9AAB0A4 /* GoogleSignIn */,
+				8E39BD73594D20300F413D74 /* GoogleSignInSwift */,
+			);
+			productName = BingeQueue;
+			productReference = 1490D9C3B0F1810434FD2C83 /* BingeQueue.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		555F776470C6C9475872090A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					2822D08C163716A00C9B1E48 = {
+						DevelopmentTeam = "";
+					};
+					5C87DFBF10DC99B0CB037F3A = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = E6D5D90F5F620AA8FF25C6FE /* Build configuration list for PBXProject "BingeQueue" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 12856B7A37EF1ADB7AE2EB7E;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AC41E034208D7BB9D4758DA1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AD7C7D542BF5B96CA2151130 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C87DFBF10DC99B0CB037F3A /* BingeQueue */,
+				2822D08C163716A00C9B1E48 /* BingeQueueWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC4E2F7E684532F168DDCE19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D23A35FA453F0C84AE011291 /* Assets.xcassets in Resources */,
+				C6A674F299837A56308A31AC /* tmdb-logo.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF53368ED75542F7F9F8C4CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C532C45EAAB46CAA30E499F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9904EA86650C459272986258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4B2DE7F775242D906F1B64 /* BingeQueueWidget.swift in Sources */,
+				4483910A2E8964999EA0A21A /* WidgetDataStore.swift in Sources */,
+				FA14957B564A065CA4DECA38 /* WidgetSnapshot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E2D7F6A16F54E925F1DF3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3944AA3029B16E8D7CD4285C /* APIClient.swift in Sources */,
+				71FA4A9478D77A84D6459890 /* AddEditSubscription.swift in Sources */,
+				E0205DDA16926A89C2E86C52 /* AppConfig.swift in Sources */,
+				AE2B0CEE312B340487EA8BAE /* AuthSession.swift in Sources */,
+				9A4B53BF1E0F2A1B48F5679F /* BingeQueueApp.swift in Sources */,
+				67A1680AC7A0567DAE72E857 /* Brand.swift in Sources */,
+				58E3849C41732C859AA2FD30 /* BrandMark.swift in Sources */,
+				6D1E8336B171BD8B37BDDA31 /* BrandNavTitle.swift in Sources */,
+				561A2C8EF2865321558AD3B9 /* KeychainStore.swift in Sources */,
+				23D65B528A604909F9E45DC0 /* LocalLibraryStore.swift in Sources */,
+				EE0C5E738D4C68714714CE48 /* Models.swift in Sources */,
+				527F9B2B7CDBA6E1B3926C4F /* RootView.swift in Sources */,
+				6A562C5D53D2605DAE65C774 /* SignInView.swift in Sources */,
+				12A682F339859780E061D115 /* SubscriptionsView.swift in Sources */,
+				9DF17F27170419850489926D /* SubscriptionsViewModel.swift in Sources */,
+				165A1B2CDA0A4E31EB78E274 /* WatchListViews.swift in Sources */,
+				6E9D76C028F7EAF783A1EB8C /* WatchView.swift in Sources */,
+				2870AAE159D8B4FD37EACA4C /* WatchViewModel.swift in Sources */,
+				3E747A182512C56FC20D9AFD /* WidgetDataStore.swift in Sources */,
+				56FE75F0737D2F57048C6D6C /* WidgetSnapshot.swift in Sources */,
+				3811D8CC3D6AF2737F76D719 /* WidgetSync.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3421AA3722EBC1D7A08E1524 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2822D08C163716A00C9B1E48 /* BingeQueueWidget */;
+			targetProxy = 879074A26894233594D52EE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AEFB17A91F265BEE27596A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BingeQueueWidget/BingeQueueWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BingeQueueWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bingequeue.com.widget;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2DD8ABCE133FCFCF4475878A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		448DFA49995B9D9B7A6AFAEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BingeQueue/Resources/BingeQueue.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BingeQueue/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bingequeue.com;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		72AD5D376E377903EF7D65F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BingeQueueWidget/BingeQueueWidget.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BingeQueueWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bingequeue.com.widget;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E51865080213E6315E91A28B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F411F9088147D5A0E3BD98EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BingeQueue/Resources/BingeQueue.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = BingeQueue/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bingequeue.com;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21FFF2CD8D28704A9EFF5018 /* Build configuration list for PBXNativeTarget "BingeQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F411F9088147D5A0E3BD98EE /* Debug */,
+				448DFA49995B9D9B7A6AFAEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E40629FA3241C62E9533063B /* Build configuration list for PBXNativeTarget "BingeQueueWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72AD5D376E377903EF7D65F5 /* Debug */,
+				0AEFB17A91F265BEE27596A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E6D5D90F5F620AA8FF25C6FE /* Build configuration list for PBXProject "BingeQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E51865080213E6315E91A28B /* Debug */,
+				2DD8ABCE133FCFCF4475878A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC41E034208D7BB9D4758DA1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E39BD73594D20300F413D74 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC41E034208D7BB9D4758DA1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		CC80A4A5B41E99C6D9AAB0A4 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC41E034208D7BB9D4758DA1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 555F776470C6C9475872090A /* Project object */;
+}
