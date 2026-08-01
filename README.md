@@ -1,6 +1,6 @@
 # BingeQueue iOS
 
-Native SwiftUI client for [BingeQueue](https://servicecycle.wedward.com) (streaming subscriptions + watch list).
+Native SwiftUI client for [BingeQueue](https://bingequeue.com) (streaming subscriptions + watch list).
 
 ## Requirements
 
@@ -11,7 +11,7 @@ Native SwiftUI client for [BingeQueue](https://servicecycle.wedward.com) (stream
 ## Generate & open
 
 ```bash
-cd ~/dev/servicecycle-ios
+cd ~/dev/bingequeue-ios
 xcodegen generate
 open BingeQueue.xcodeproj
 ```
@@ -39,7 +39,7 @@ Bundle ID is `com.bingequeue.com`.
 | Build | Base URL |
 |-------|----------|
 | Debug | `http://localhost:3000` |
-| Release | `https://servicecycle.wedward.com` |
+| Release | `https://bingequeue.com` |
 
 Run the web app (`npm run dev` in `~/dev/bingequeue`) before signing in from the simulator.
 

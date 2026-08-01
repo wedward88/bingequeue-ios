@@ -4,7 +4,7 @@ enum AppConfig {
     #if DEBUG
     static let apiBaseURL = URL(string: "http://localhost:3000")!
     #else
-    static let apiBaseURL = URL(string: "https://servicecycle.wedward.com")!
+    static let apiBaseURL = URL(string: "https://bingequeue.com")!
     #endif
 
     static let tmdbPosterBaseURL = "https://image.tmdb.org/t/p/w500"
