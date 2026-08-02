@@ -405,6 +405,7 @@
 				DEVELOPMENT_TEAM = 2866ZNMW73;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = BingeQueueWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,6 +487,9 @@
 				DEVELOPMENT_TEAM = 2866ZNMW73;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = BingeQueue/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BingeQueue;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -506,6 +510,7 @@
 				DEVELOPMENT_TEAM = 2866ZNMW73;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = BingeQueueWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,6 +599,9 @@
 				DEVELOPMENT_TEAM = 2866ZNMW73;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = BingeQueue/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BingeQueue;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 17;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
