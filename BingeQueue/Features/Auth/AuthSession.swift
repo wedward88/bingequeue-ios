@@ -110,7 +110,22 @@ final class AuthSession: ObservableObject {
             user = auth.user
             mode = .authenticated
         } catch {
-            errorMessage = UserFacingError.message(from: error)
+            // Prefer the API / SDK message; fall back to a Debug-specific hint.
+            let message = UserFacingError.message(from: error)
+                ?? "Google Sign-In failed."
+            #if DEBUG
+            if message.localizedCaseInsensitiveContains("reach")
+                || message.localizedCaseInsensitiveContains("connect")
+                || message.localizedCaseInsensitiveContains("offline")
+            {
+                errorMessage =
+                    "\(message) In Debug, the app calls \(AppConfig.apiBaseURL.absoluteString) — run the web app locally and use the Simulator (not a physical phone)."
+            } else {
+                errorMessage = message
+            }
+            #else
+            errorMessage = message
+            #endif
         }
     }
 

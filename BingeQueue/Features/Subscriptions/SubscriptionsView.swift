@@ -186,13 +186,13 @@ struct ProfileMenu: View {
     var body: some View {
         Menu {
             if auth.isGuest {
-                Text("On this iPhone only")
-                Text("Separate from any signed-in account")
+                Text("Not signed in")
+                Text("Lists stay on this iPhone and won’t sync")
                 Button("Sign in with Google") {
                     Task { await auth.signInWithGoogle() }
                 }
                 Divider()
-                Button("Leave local mode", role: .destructive) {
+                Button("Back to welcome", role: .destructive) {
                     auth.signOut()
                 }
             } else {

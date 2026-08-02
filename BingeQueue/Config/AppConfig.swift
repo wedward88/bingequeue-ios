@@ -2,15 +2,10 @@ import Foundation
 
 enum AppConfig {
     #if DEBUG
-    /// Authenticated account calls in Debug (local Next.js).
     static let apiBaseURL = URL(string: "http://localhost:3000")!
     #else
     static let apiBaseURL = URL(string: "https://api.bingequeue.com")!
     #endif
-
-    /// Public TMDB proxies (providers / search / discover). Always production so
-    /// guest mode and on-device Debug builds work without a local server.
-    static let publicAPIBaseURL = URL(string: "https://api.bingequeue.com")!
 
     static let tmdbPosterBaseURL = "https://image.tmdb.org/t/p/w500"
     static let tmdbPosterLargeBaseURL = "https://image.tmdb.org/t/p/w780"

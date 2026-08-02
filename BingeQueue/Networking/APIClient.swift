@@ -68,16 +68,10 @@ final class APIClient: APIClientProtocol, @unchecked Sendable {
 
     private let session: URLSession
     private let baseURL: URL
-    private let publicBaseURL: URL
     var onUnauthorized: (() -> Void)?
 
-    init(
-        baseURL: URL = AppConfig.apiBaseURL,
-        publicBaseURL: URL = AppConfig.publicAPIBaseURL,
-        session: URLSession = .shared
-    ) {
+    init(baseURL: URL = AppConfig.apiBaseURL, session: URLSession = .shared) {
         self.baseURL = baseURL
-        self.publicBaseURL = publicBaseURL
         self.session = session
     }
 
@@ -88,9 +82,7 @@ final class APIClient: APIClientProtocol, @unchecked Sendable {
         body: Data? = nil,
         authorized: Bool = true
     ) async throws -> T {
-        // Unauthenticated routes always use the public production host so guest
-        // mode / device Debug builds can search and browse without localhost.
-        var url = authorized ? baseURL : publicBaseURL
+        var url = baseURL
         for segment in path.split(separator: "/") where !segment.isEmpty {
             url = url.appendingPathComponent(String(segment))
         }
@@ -133,10 +125,20 @@ final class APIClient: APIClientProtocol, @unchecked Sendable {
         }
 
         if http.statusCode == 401 {
-            await MainActor.run {
-                onUnauthorized?()
+            // Only treat as a session expiry for authenticated requests. Login
+            // failures (e.g. audience mismatch) must surface their API message.
+            if authorized {
+                await MainActor.run {
+                    onUnauthorized?()
+                }
+                throw APIError.unauthorized
             }
-            throw APIError.unauthorized
+            if let apiError = try? JSONDecoder().decode(APIErrorResponse.self, from: data),
+               !apiError.error.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            {
+                throw APIError.http(status: 401, message: apiError.error)
+            }
+            throw APIError.http(status: 401, message: "Unauthorized.")
         }
 
         guard (200..<300).contains(http.statusCode) else {
