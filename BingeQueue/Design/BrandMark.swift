@@ -215,7 +215,8 @@ struct BrandWordmark: View {
 
             if showUnderline {
                 BrandUnderline(animate: true)
-                    .frame(height: max(2, fontSize * 0.09))
+                    // Slightly under web’s 0.09em so the Capsule reads as thin as the CSS bar.
+                    .frame(height: max(1, fontSize * 0.05))
                     .padding(.top, fontSize * 0.28)
             }
         }

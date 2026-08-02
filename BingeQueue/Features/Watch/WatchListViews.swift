@@ -65,7 +65,7 @@ struct WatchListTabView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     if !viewModel.watchList.isEmpty {
-                        Button(isEditing ? "Done" : "Edit") {
+                        Button(isEditing ? "Done" : "Reorder") {
                             withAnimation {
                                 editMode = isEditing ? .inactive : .active
                             }
@@ -155,20 +155,28 @@ struct WatchListRow: View {
                     .foregroundStyle(Brand.secondary)
 
                 if !item.streamingProviders.isEmpty {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 6) {
-                            ForEach(item.streamingProviders) { provider in
-                                ProviderLogo(path: provider.logoUrl)
-                                    .frame(width: 22, height: 22)
-                            }
+                    // Plain HStack (not a ScrollView) so row swipe-to-delete
+                    // doesn’t scroll the logos sideways.
+                    HStack(spacing: 6) {
+                        ForEach(item.streamingProviders.prefix(6)) { provider in
+                            ProviderLogo(path: provider.logoUrl)
+                                .frame(width: 22, height: 22)
+                        }
+                        if item.streamingProviders.count > 6 {
+                            Text("+\(item.streamingProviders.count - 6)")
+                                .font(.caption2.weight(.semibold))
+                                .foregroundStyle(Brand.secondary)
                         }
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .clipped()
                 } else {
                     Text("Not on your plans")
                         .font(.caption)
                         .foregroundStyle(Brand.warning)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.vertical, 4)
     }
@@ -178,7 +186,6 @@ struct TitleDetailSheet: View {
     @ObservedObject var viewModel: WatchViewModel
     let result: SearchResult
     @Environment(\.dismiss) private var dismiss
-    @State private var showLightbox = false
 
     private var onList: Bool {
         viewModel.isOnWatchList(result)
@@ -188,12 +195,7 @@ struct TitleDetailSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    Button {
-                        showLightbox = true
-                    } label: {
-                        poster
-                    }
-                    .buttonStyle(.plain)
+                    poster
 
                     Text(result.displayTitle)
                         .font(.title2.weight(.bold))
@@ -264,11 +266,6 @@ struct TitleDetailSheet: View {
                     Button("Close") { dismiss() }
                 }
             }
-            .fullScreenCover(isPresented: $showLightbox) {
-                PosterLightbox(path: result.posterPath) {
-                    showLightbox = false
-                }
-            }
         }
     }
 
@@ -289,37 +286,6 @@ struct TitleDetailSheet: View {
         }
         .frame(maxWidth: .infinity)
         .background(Brand.base200)
-    }
-}
-
-struct PosterLightbox: View {
-    let path: String?
-    let onClose: () -> Void
-
-    var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
-            if let url = AppConfig.tmdbImageURL(path: path, size: .posterLarge) {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image.resizable().scaledToFit()
-                    default:
-                        ProgressView().tint(.white)
-                    }
-                }
-                .padding()
-            }
-        }
-        .onTapGesture(perform: onClose)
-        .overlay(alignment: .topTrailing) {
-            Button(action: onClose) {
-                Image(systemName: "xmark.circle.fill")
-                    .font(.title)
-                    .foregroundStyle(.white.opacity(0.9))
-                    .padding()
-            }
-        }
     }
 }
 

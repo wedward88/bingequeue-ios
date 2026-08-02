@@ -39,30 +39,25 @@ final class WatchViewModel: ObservableObject {
             if isLocal {
                 watchList = localStore.fetchWatchList()
                 subscriptions = localStore.fetchSubscriptions()
-                if selectedProviderId == nil, let first = subscribedProviders.first {
-                    selectedProviderId = first.providerId
-                }
-                if let providerId = selectedProviderId {
-                    do {
-                        discoverResults = try await api.discoverByProvider(
-                            providerId: providerId,
-                            mediaType: mediaFilter
-                        )
-                    } catch {
-                        discoverResults = []
-                    }
-                }
             } else {
                 async let list = api.fetchWatchList()
                 async let subs = api.fetchSubscriptions()
                 watchList = try await list
                 subscriptions = try await subs
-                if selectedProviderId == nil, let first = subscribedProviders.first {
-                    selectedProviderId = first.providerId
-                    await discover(providerId: first.providerId)
-                } else if let selectedProviderId {
-                    await discover(providerId: selectedProviderId)
-                }
+            }
+
+            // Browse titles for a subscribed service via the public search API.
+            if selectedProviderId == nil, let first = subscribedProviders.first {
+                await discover(providerId: first.providerId)
+            } else if let selectedProviderId,
+                      subscribedProviders.contains(where: { $0.providerId == selectedProviderId })
+            {
+                await discover(providerId: selectedProviderId)
+            } else if let first = subscribedProviders.first {
+                await discover(providerId: first.providerId)
+            } else {
+                selectedProviderId = nil
+                discoverResults = []
             }
             WidgetSync.publish(
                 subscriptions: subscriptions,

@@ -1,8 +1,10 @@
 import SwiftUI
+import UIKit
 
 struct WatchView: View {
     @EnvironmentObject private var auth: AuthSession
     @ObservedObject var viewModel: WatchViewModel
+    @FocusState private var isSearchFocused: Bool
 
     var body: some View {
         NavigationStack {
@@ -27,6 +29,20 @@ struct WatchView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     ProfileMenu()
                 }
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") {
+                        dismissSearchKeyboard()
+                    }
+                }
+            }
+            .onChange(of: viewModel.selectedResult) { _, result in
+                if result != nil {
+                    dismissSearchKeyboard()
+                }
+            }
+            .onDisappear {
+                dismissSearchKeyboard()
             }
             .sheet(item: $viewModel.selectedResult) { result in
                 TitleDetailSheet(viewModel: viewModel, result: result)
@@ -54,6 +70,11 @@ struct WatchView: View {
             TextField("Search movies & TV", text: $viewModel.searchQuery)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
+                .focused($isSearchFocused)
+                .submitLabel(.search)
+                .onSubmit {
+                    dismissSearchKeyboard()
+                }
                 .onChange(of: viewModel.searchQuery) { _, _ in
                     viewModel.scheduleSearch()
                 }
@@ -61,6 +82,7 @@ struct WatchView: View {
                 Button {
                     viewModel.searchQuery = ""
                     viewModel.searchResults = []
+                    dismissSearchKeyboard()
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(Brand.secondary)
@@ -106,6 +128,7 @@ struct WatchView: View {
                     HStack(spacing: 8) {
                         ForEach(viewModel.subscribedProviders) { provider in
                             Button {
+                                dismissSearchKeyboard()
                                 Task { await viewModel.discover(providerId: provider.providerId) }
                             } label: {
                                 HStack(spacing: 6) {
@@ -173,6 +196,7 @@ struct WatchView: View {
                                 result: result,
                                 isOnWatchList: viewModel.isOnWatchList(result)
                             ) {
+                                dismissSearchKeyboard()
                                 Task { await viewModel.openDetail(result) }
                             } onToggleWatchList: {
                                 Task {
@@ -194,8 +218,19 @@ struct WatchView: View {
                         .padding(.horizontal)
                         .padding(.bottom, 24)
                 }
+                .scrollDismissesKeyboard(.interactively)
             }
         }
+    }
+
+    private func dismissSearchKeyboard() {
+        isSearchFocused = false
+        UIApplication.shared.sendAction(
+            #selector(UIResponder.resignFirstResponder),
+            to: nil,
+            from: nil,
+            for: nil
+        )
     }
 }
 
@@ -227,6 +262,9 @@ struct PosterCard: View {
                 .font(.caption)
                 .foregroundStyle(Brand.baseContent)
                 .lineLimit(2)
+                .multilineTextAlignment(.leading)
+                // Reserve two lines so the grid doesn’t stagger when titles wrap.
+                .frame(maxWidth: .infinity, minHeight: 34, alignment: .topLeading)
         }
     }
 

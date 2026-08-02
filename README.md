@@ -36,12 +36,12 @@ Bundle ID is `com.bingequeue.com`.
 
 ## API base URL
 
-| Build | Base URL |
-|-------|----------|
-| Debug | `http://localhost:3000` |
-| Release | `https://api.bingequeue.com` |
+| Build | Authenticated API | Public search / providers |
+|-------|-------------------|---------------------------|
+| Debug | `http://localhost:3000` | `https://api.bingequeue.com` |
+| Release | `https://api.bingequeue.com` | `https://api.bingequeue.com` |
 
-Run the web app (`npm run dev` in `~/dev/bingequeue`) before signing in from the simulator.
+Guest mode and provider browse/search always use the public production API. For Google sign-in against a local server in Debug, run the web app (`npm run dev` in `~/dev/bingequeue`).
 
 ## Features
 

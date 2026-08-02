@@ -38,6 +38,10 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
+                // Reload when returning from Subscriptions so new local plans appear.
+                .onAppear {
+                    Task { await watchViewModel.load(isLocal: auth.isGuest) }
+                }
 
             WatchListTabView(viewModel: watchViewModel)
                 .tabItem {

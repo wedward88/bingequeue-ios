@@ -60,7 +60,7 @@ struct SignInView: View {
                     .buttonStyle(.plain)
                     .disabled(auth.isSigningIn)
 
-                    Text("Without an account, subscriptions and your watch list stay on this iPhone only — separate from any BingeQueue account.")
+                    Text("Without an account, we're unable to sync your subscriptions and watch list between devices.")
                         .font(.caption)
                         .foregroundStyle(Brand.secondary)
                         .multilineTextAlignment(.center)

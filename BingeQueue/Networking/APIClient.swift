@@ -26,13 +26,13 @@ enum APIError: LocalizedError, Equatable {
             if trimmed.isEmpty
                 || trimmed.localizedCaseInsensitiveContains("cancel")
             {
-                return "Could not reach the BingeQueue server. Is it running at \(AppConfig.apiBaseURL.absoluteString)?"
+                return "Could not reach the BingeQueue server."
             }
             if trimmed.localizedCaseInsensitiveContains("connect")
                 || trimmed.localizedCaseInsensitiveContains("offline")
                 || trimmed.localizedCaseInsensitiveContains("network")
             {
-                return "Could not reach the BingeQueue server. Is it running at \(AppConfig.apiBaseURL.absoluteString)?"
+                return "Could not reach the BingeQueue server."
             }
             return trimmed
         }
@@ -68,10 +68,16 @@ final class APIClient: APIClientProtocol, @unchecked Sendable {
 
     private let session: URLSession
     private let baseURL: URL
+    private let publicBaseURL: URL
     var onUnauthorized: (() -> Void)?
 
-    init(baseURL: URL = AppConfig.apiBaseURL, session: URLSession = .shared) {
+    init(
+        baseURL: URL = AppConfig.apiBaseURL,
+        publicBaseURL: URL = AppConfig.publicAPIBaseURL,
+        session: URLSession = .shared
+    ) {
         self.baseURL = baseURL
+        self.publicBaseURL = publicBaseURL
         self.session = session
     }
 
@@ -82,7 +88,9 @@ final class APIClient: APIClientProtocol, @unchecked Sendable {
         body: Data? = nil,
         authorized: Bool = true
     ) async throws -> T {
-        var url = baseURL
+        // Unauthenticated routes always use the public production host so guest
+        // mode / device Debug builds can search and browse without localhost.
+        var url = authorized ? baseURL : publicBaseURL
         for segment in path.split(separator: "/") where !segment.isEmpty {
             url = url.appendingPathComponent(String(segment))
         }

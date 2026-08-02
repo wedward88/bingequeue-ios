@@ -44,10 +44,11 @@ final class SubscriptionsViewModel: ObservableObject {
             if isLocal {
                 subscriptions = localStore.fetchSubscriptions()
                 do {
-                    commonProviders = try await api.fetchProviders()
+                    let remote = try await api.fetchProviders()
+                    commonProviders = remote.isEmpty ? AppConfig.bundledCommonProviders : remote
                 } catch {
-                    // Guest mode can still manage local data if the API is offline.
-                    commonProviders = []
+                    // Guest mode still shows popular services without a network.
+                    commonProviders = AppConfig.bundledCommonProviders
                 }
             } else {
                 async let providers = api.fetchProviders()
